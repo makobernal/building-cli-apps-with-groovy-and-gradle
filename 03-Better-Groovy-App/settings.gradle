@@ -16,4 +16,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = '02-Simple-Groovy-App-With-CLIBuilder'
+rootProject.name = '03-Better-Groovy-App'
