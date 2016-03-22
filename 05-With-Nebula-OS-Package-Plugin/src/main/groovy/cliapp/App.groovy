@@ -15,7 +15,7 @@ class AppRunner {
     AppCore appCore = new AppCore()
 
     AppRunner(String[] args){
-        cli = new CliBuilder(usage: 'java -jar 03-Better-Groovy-App.jar [options] [word]', width: 120)
+        cli = new CliBuilder(usage: 'printwords [options] [word]', width: 120)
         cli.header = 'Sample app that prints one word a given number of times'
         cli.with{
             t longOpt: 'times', args:1 , argName: 'number-times', required: true, 'Number of times the word will be printed.'

@@ -64,7 +64,7 @@ class AppRunnerSpec extends Specification {
                         ['too', 'many', 'arguments']]
     }
 
-    public static final String USAGE = '''usage: java -jar 03-Better-Groovy-App.jar [options] [word]
+    public static final String USAGE = '''usage: printwords [options] [word]
 Sample app that prints one word a given number of times
  -t,--times <number-times>   Number of times the word will be printed.'''
 

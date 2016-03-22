@@ -1,9 +1,9 @@
-apply plugin: 'groovy'
-apply plugin: 'application'
-
 plugins {
     id 'nebula.ospackage' version '3.4.0'
 }
+
+apply plugin: 'groovy'
+apply plugin: 'application'
 
 repositories {
     mavenCentral()
@@ -24,18 +24,17 @@ startScripts {
 }
 
 ospackage {
-    summary 'printwords - a sample packaged groovy app'
-    packageName 'rango-deploydocus'
-    version '0.0.1'
-    release '1'
+    packageName 'printwords'
+    version '1'
     os = LINUX
 
-    requires('java')
+    requires ('default-jre')
 
-    into '/opt/printwords'
+    into '/opt'
 
-    from('folder') {
-        into '/opt/printwords'
+    from {
+        project.zipTree(project.tasks.distZip.outputs.files.singleFile)
     }
 
+    link ('/usr/bin/printwords', '/opt/05-With-Nebula-OS-Package-Plugin/bin/printwords')
 }
